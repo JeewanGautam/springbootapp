@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-frontend
+  name: spring-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spring-frontend
+    spec:
+      containers:
+      - image: jeewangautam02261995/springbootapp:v2
+        name: springbootapp
+        resources: {}
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-frontend
+  name: spring-service
+spec:
+  ports:
+  - port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: spring-frontend
+  type: LoadBalancer

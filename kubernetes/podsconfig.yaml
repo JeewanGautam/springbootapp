@@ -2,11 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata: 
  name: mydemo-app
+ namespace: qa
  labels:
   appname: demoapp
   type: frontend
 spec:
  containers:
  - name: mydemoapp
-   image: jeewangautam02261995/myspringapp:welcome
+   image: jeewangautam02261995/springbootapp:v1
 
