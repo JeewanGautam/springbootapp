@@ -9,5 +9,5 @@ metadata:
 spec:
  containers:
  - name: mydemoapp
-   image: jeewangautam02261995/springbootapp:v1
+   image: jeewangautam02261995/springbootapp:v2
 
